@@ -5,7 +5,7 @@ import Btn from "../../../components/button/Btn";
 import { useNavigate } from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
-
+import { Helmet } from "react-helmet-async";
 
 const ApplayedJob = () => {
 	const applayedJobs = getArrayFromLocalStorage("objectArray");
@@ -13,6 +13,9 @@ const ApplayedJob = () => {
 
 	return (
 		<div className="lg:px-20 px-10 ">
+			<Helmet >
+				<title>Applyed Job</title>
+			</Helmet>
 			<div className="mt-10 ">
 				<img src={bg1} alt="" />
 			</div>

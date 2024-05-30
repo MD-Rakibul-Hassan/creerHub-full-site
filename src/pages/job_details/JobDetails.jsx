@@ -10,6 +10,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import Btn from "../../components/button/Btn";
 import { addObjectToLocalStorage } from "../../local_storage/applyed_job";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
 	const { data } = useContext(JobContext);
@@ -17,6 +18,9 @@ const JobDetails = () => {
 	const detailsJob = data.filter((job) => job.id == id);
 	return (
 		<div className=" ">
+			<Helmet>
+				<title>Job Details</title>
+			</Helmet>
 			<div className="flex lg:mt-24 mt-10 w-full ">
 				<img src={bg1} alt="" className="hidden lg:flex" />
 			</div>

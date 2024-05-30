@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContextProvider from "./contexts/jobcontext/JobContext.jsx";
 import JobDetails from "./pages/job_details/JobDetails.jsx";
 import ApplayedJob from "./pages/home/applayed_job/ApplayedJob.jsx";
-
+import {HelmetProvider} from 'react-helmet-async'
 const route = createBrowserRouter([
 	{
 		path: "/",
@@ -32,8 +32,10 @@ const route = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<ContextProvider>
-		<RouterProvider router={route}>
-			<App />
-		</RouterProvider>
+		<HelmetProvider>
+			<RouterProvider router={route}>
+				<App />
+			</RouterProvider>
+		</HelmetProvider>
 	</ContextProvider>
 );
